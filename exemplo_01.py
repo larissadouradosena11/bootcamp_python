@@ -1,20 +1,23 @@
 ## Faça um programa que peça dois números inteiros e imprima a divisão do primeiro pelo segundo:
 
 numero_01 = int(input("Insira um número inteiro:"))
-numero_02 = int(input("Insira outro número inteiro:"))
+if isinstance(numero_01, int):
+    numero_02 = int(input("Insira outro número inteiro:"))
+if isinstance(numero_02, int):
+    def calculadora_divisao(numero_01, numero_02):
+        try:
+            resultado = numero_01 // numero_02
+            return resultado
+        except:
+            print("integer division or modulo by zero")
+            return None
+        
+    resultado_divisao = calculadora_divisao(numero_01, numero_02)
 
-def calculadora_divisao(numero_01, numero_02):
-    try:
-        resultado = numero_01 // numero_02
-        return resultado
-    except:
-        print("integer division or modulo by zero")
-        return None
-    
-resultado_divisao = calculadora_divisao(numero_01, numero_02)
-
-if resultado_divisao is not None:
-    print(f"A divisão de {numero_01} por {numero_02} é: {resultado_divisao:.2f}")
+    if resultado_divisao is not None:
+        print(f"A divisão de {numero_01} por {numero_02} é: {resultado_divisao:.2f}")
+else:
+    print("A variável não é inteira")
 
 ## Faça um programa que calcule a área de um circulo, recebendo o raio como entrada:
 import math
